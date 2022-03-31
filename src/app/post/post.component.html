@@ -1,0 +1,67 @@
+<main class="container">
+  <section class="row">
+    <h1 class="col-12 topUsername">Jade Travel</h1>
+    <div class="col-12 links tags">
+      <p>Travel/Leisure</p>
+      <a>Stockholm</a>
+      <a>Sweden</a>
+      <a><i class="fas fa-pen"></i>Edit Info</a>
+    </div>
+    <p class="col-12 title myConten">My content</p>
+    <div class="col-12 customContent">My custom Content</div>
+    <p class="col-12 title wall">Wall</p>
+    <div class="links share">
+      <p class="subText">Share:</p>
+      <a><i class="fas fa-book-open"></i>Status</a>
+      <a><i class="fas fa-file-image"></i>Phots</a>
+      <a><i class="fas fa-link"></i>Links</a>
+      <a><i class="fas fa-video"></i>Videos</a>
+      <a><i class="fas fa-question-circle"></i>Questions</a>
+    </div>
+  </section>
+
+  <section class="postList" *ngFor="let post of postJSON">
+    <div class="row">
+      <img class="col-3 image icon" [src]="post.icon" alt="" />
+      <div class="col-9">
+        <a
+          ><p class="profile userName">{{ post.profileUserame }}</p></a
+        >
+        <p class="profile userDescribe">
+          {{ post.profileDescribe }}
+        </p>
+      </div>
+    </div>
+    <div class="row postCotainer">
+      <div class="col-9">
+        <div class="row">
+          <img class="col-12 image post" [src]="post.mainPost" alt="" />
+          <p class="col-12 subText">881 Impressions・0.23% Feedback</p>
+          <div class="col-12 links review">
+            <a><i class="fas fa-clipboard"></i>Like</a>
+            <a>・Comment</a>
+            <a>・Translagte</a>
+            <a>・Share</a>
+            <p class="subText">・19 hours ago</p>
+          </div>
+          <div class="comentsArea">
+            <div class="col-12 links likes">
+              <a class="thumbsUp"><app-like></app-like></a>
+              <a>2 people</a>
+              <p>like this.</p>
+            </div>
+            <textarea
+              class="col-12 coments"
+              name=""
+              id=""
+              cols="10"
+              rows="10"
+              placeholder="Write a comment..."
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+  </section>
+</main>
